@@ -2,6 +2,13 @@
 ### Objective
 Create a single page application (SPA) that creates a product that meets the requirements relayed by Jac Enterprises
 
+### Army Team
+- Wendy
+- Aaron Z
+- Jacob B
+- Name M
+- Omar B
+
 ### Skills Required
 - HTML
 - JavaScript
