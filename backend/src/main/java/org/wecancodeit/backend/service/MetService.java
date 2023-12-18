@@ -1,4 +1,4 @@
-package org.wecancodeit.backend.service;
+package org.wecancodeit.backend.services;
 
 import java.io.IOException;
 import java.net.URI;
@@ -9,10 +9,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import org.springframework.stereotype.Service;
 import org.wecancodeit.backend.ArtItem;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+@Service
 public class MetService {
 
     public ArtItem getItemByYear(String year) throws IOException, InterruptedException {
