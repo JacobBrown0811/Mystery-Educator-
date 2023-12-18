@@ -3,8 +3,10 @@ package org.wecancodeit.backend.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.annotation.Resource;
+
 @RestController
-@RequestMapping() // I think this will have to ping the fact api from apininja
+@RequestMapping("/api/history")
 public class HistoryController {
 
 }
