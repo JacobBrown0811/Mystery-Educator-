@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.wecancodeit.backend.services.HistoryFactService;
+import org.wecancodeit.backend.service.HistoryFactService;
 
 @SpringBootApplication
 public class BackendApplication {
