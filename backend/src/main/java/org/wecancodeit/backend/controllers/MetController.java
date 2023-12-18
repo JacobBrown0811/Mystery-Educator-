@@ -4,10 +4,9 @@ import java.io.IOException;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.wecancodeit.backend.services.MetService;
+import org.wecancodeit.backend.Services.MetService;
 
 import jakarta.annotation.Resource;
-
 
 @RestController
 @RequestMapping("/met")
