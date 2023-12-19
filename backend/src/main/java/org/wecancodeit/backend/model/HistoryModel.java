@@ -57,4 +57,8 @@ public class HistoryModel {
         this.event = event;
     }
 
+    public long getId() {
+        return id;
+    }
+
 }
