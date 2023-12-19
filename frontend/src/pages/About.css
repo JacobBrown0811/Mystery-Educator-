@@ -1,0 +1,30 @@
+.About-header {
+  color: #180e0e;
+  text-align: center;
+
+}
+
+
+.group-container {
+  display: flex;
+  gap: 60px;
+}
+
+.group-box {
+  flex: 1;
+  min-width: 180px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .group-container {
+    flex-direction: column;
+  }
+
+ 
+}
