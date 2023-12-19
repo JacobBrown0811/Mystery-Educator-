@@ -44,4 +44,50 @@ const Home = () => {
   );
 };
 
+const Home = () => {
+  return (
+    <div className="main-box">
+      <img src="/media/pictures/ChildrenIGuess.jpg" alt="Placeholder" />
+      <div className="action-buttons">
+        <button
+          className="action-button"
+          onClick={() => console.log("Button 1 clicked")}
+          title="Placeholder text for box 1 that will be a description for the user to describe the action of the button"
+        >
+          <img
+            src="/media/pictures/yellowChildren.jpg"
+            alt="Art Facts"
+            className="button-image"
+          />
+          Button 1
+        </button>
+        <button
+          className="action-button"
+          onClick={() => console.log("Button 2 clicked")}
+          title="Placeholder text for box 2 that will be a description for the user to describe the action of the button"
+        >
+        <img
+            src="/media/pictures/redChildren.jpg"
+            alt="History Facts"
+            className="button-image"
+          />
+          Button 2
+        </button>
+        <button
+          className="action-button"
+          onClick={() => console.log("Button 3 clicked")}
+          title="Placeholder text for box 3 that will be a description for the user to describe the action of the button"
+        >
+        <img
+            src="/media/pictures/blueChildren.jpg"
+            alt="Random Facts"
+            className="button-image"
+          />
+          Button 3
+        </button>
+      </div>
+    </div>
+  );
+};
+
 export default Home;
