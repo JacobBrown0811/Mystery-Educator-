@@ -1,13 +1,22 @@
 import ArtDisplay from "../components/ArtDisplayComponent"
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Home = () => {
     const [historyEvent, setHistoryEvent] = useState(null);
     const [artPiece, setArtPiece] = useState(null);
+    const [year, setYear] = useState(new Date().getFullYear()-100);
 
     // Function to fetch new event and art piece
     const refreshContent = () => {
-        // Fetch and update state for historyEvent and artPiece
+
+        // fetch artPiece
+        axios.get(`met/random/${year}`)
+            .then(response => setArtPiece(response.data))
+            .catch(error => console.error("Error fetching art piece", error));
+
+        //TODO fetch history Event
+
     };
 
     useEffect(() => {
