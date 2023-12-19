@@ -7,9 +7,11 @@ body {
 }
 
 nav {
-  background-color: #333;
+  background-color: #2a7daf;
   color: white;
   padding: 10px;
+  background-image: linear-gradient(#2a7daf, #050507);
+  border-bottom: 2rem double #050507;
 }
 
 .navbar {
@@ -36,7 +38,7 @@ nav {
 
 .main-box {
   padding: 20px;
-  background-color: #f0f0f0;
+  background: linear-gradient(90deg,#2a7daf, #304067);
   text-align: center;
 }
 
@@ -49,19 +51,19 @@ nav {
 .action-buttons {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
+  margin-top: 0px;
+  background-image: linear-gradient(90deg,#2a7daf, #050507);
 }
 
 .action-button {
   padding: 10px 20px;
-  background-color: #333;
-  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  background: linear-gradient(90deg,#2a7daf, #304067);
   transition: background-color 0.3s;
 }
 
 .action-button:hover {
-  background-color: #555;
+  background-color: #e9e2a0;
 }
