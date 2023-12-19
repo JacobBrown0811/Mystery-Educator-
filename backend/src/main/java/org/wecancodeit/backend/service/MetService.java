@@ -1,4 +1,4 @@
-package org.wecancodeit.backend.Services;
+package org.wecancodeit.backend.service;
 
 import java.io.IOException;
 import java.net.URI;

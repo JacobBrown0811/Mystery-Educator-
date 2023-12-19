@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.wecancodeit.backend.Services.MetService;
+import org.wecancodeit.backend.service.MetService;
 
 import jakarta.annotation.Resource;
 
