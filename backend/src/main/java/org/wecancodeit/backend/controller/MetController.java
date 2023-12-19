@@ -1,4 +1,4 @@
-package org.wecancodeit.backend.controllers;
+package org.wecancodeit.backend.controller;
 
 import java.io.IOException;
 
