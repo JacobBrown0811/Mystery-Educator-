@@ -1,33 +1,18 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
-  // Keeps track of the current "Active" section
-  const [activeSection, setActiveSection] = useState(null);
-
-  // Function to update the "Active" section
-  const navigateTo = (sectionId) => {
-    setActiveSection(sectionId);
-  };
-
   return (
     <nav>
-      <div className="navbar">
-        <div className="nav-title">Army Learning App</div>
-        <div className="nav-links">
-          <button
-            onClick={() => navigateTo("home")}
-            className={activeSection === "home" ? "active" : ""}
-          >
-            Home
-          </button>
-          <button
-            onClick={() => navigateTo("aboutUs")}
-            className={activeSection === "aboutUs" ? "active" : ""}
-          >
-            About Us
-          </button>
-        </div>
-      </div>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+      </ul>
+
     </nav>
   );
 };
