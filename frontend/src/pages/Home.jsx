@@ -53,13 +53,6 @@ const Home = () => {
         >
           <ArtDisplay data={artPiece} />
         </button>
-        <button
-          className="action-button"
-          onClick={refreshContent}
-          title="Placeholder text for box 3 that will be a description for the user to describe the action of the button"
-        >
-          Refresh
-        </button>
         <div>
           <input
             type="text"
