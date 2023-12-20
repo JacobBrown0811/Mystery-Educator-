@@ -9,7 +9,7 @@
  .About-header {
   font-size: 70px;
   margin-bottom: 60px;
-  background-image: url('pages/picture/star.png');
+background-image: url('pages/picture/star.png');
  background-repeat: no-repeat;
  background-position: center;
  background-size: 1cap;
@@ -45,5 +45,4 @@
      flex-direction: column;
   }
  
-  
  }
