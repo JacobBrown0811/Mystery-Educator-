@@ -7,6 +7,7 @@ const Home = () => {
   const [historyEvent, setHistoryEvent] = useState(null);
   const [artPiece, setArtPiece] = useState(null);
   const [year, setYear] = useState(new Date().getFullYear() - 100);
+  const [userInput, setUserInput] = useState("");
 
   // Function to fetch new event and art piece
   const refreshContent = () => {
@@ -26,6 +27,24 @@ const Home = () => {
   useEffect(() => {
     refreshContent(); // Initial fetch on component mount
   }, []);
+
+  const handleInputChange = (event) => {
+    setUserInput(event.target.value);
+  };
+
+  const handleUserInput = () => {
+    setYear(userInput);
+    axios
+      .get(`met/random/${year}`)
+      .then((response) => setArtPiece(response.data))
+      .catch((error) => console.error("Error fetching art piece", error));
+
+    // fetch history Event
+    axios
+      .get(`history/random/${year}`)
+      .then((response) => setHistoryEvent(response.data))
+      .catch((error) => console.error("Error fetching fact", error));
+  };
 
   return (
     <div className="main-box">
@@ -52,9 +71,20 @@ const Home = () => {
         >
           Refresh
         </button>
+        <div>
+          <input
+            type="text"
+            value={userInput}
+            onChange={handleInputChange}
+            placeholder="Enter a year..."
+          />
+          <button className="action-button" onClick={handleUserInput}>
+            Submit
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Home
+export default Home;
