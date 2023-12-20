@@ -6,11 +6,10 @@ import HistoryEvent from "../components/HistoryDisplayComponent";
 const Home = () => {
   const [historyEvent, setHistoryEvent] = useState(null);
   const [artPiece, setArtPiece] = useState(null);
-  const [year, setYear] = useState(new Date().getFullYear() - 100);
   const [userInput, setUserInput] = useState("");
 
   // Function to fetch new event and art piece
-  const refreshContent = () => {
+  const refreshContent = (year) => {
     // fetch artPiece
     axios
       .get(`met/random/${year}`)
@@ -25,7 +24,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    refreshContent(); // Initial fetch on component mount
+    refreshContent(new Date().getFullYear() - 100); // Initial fetch on component mount
   }, []);
 
   const handleInputChange = (event) => {
@@ -33,8 +32,7 @@ const Home = () => {
   };
 
   const handleUserInput = () => {
-    setYear(userInput);
-    refreshContent();
+    refreshContent(userInput);
   };
 
   return (
