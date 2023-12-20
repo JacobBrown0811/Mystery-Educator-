@@ -6,10 +6,10 @@ import HistoryEvent from "../components/HistoryDisplayComponent";
 const Home = () => {
   const [historyEvent, setHistoryEvent] = useState(null);
   const [artPiece, setArtPiece] = useState(null);
-  const [year, setYear] = useState(new Date().getFullYear() - 100);
+  const [userInput, setUserInput] = useState("");
 
   // Function to fetch new event and art piece
-  const refreshContent = () => {
+  const refreshContent = (year) => {
     // fetch artPiece
     axios
       .get(`met/random/${year}`)
@@ -24,8 +24,16 @@ const Home = () => {
   };
 
   useEffect(() => {
-    refreshContent(); // Initial fetch on component mount
+    refreshContent(new Date().getFullYear() - 100); // Initial fetch on component mount
   }, []);
+
+  const handleInputChange = (event) => {
+    setUserInput(event.target.value);
+  };
+
+  const handleUserInput = () => {
+    refreshContent(userInput);
+  };
 
   return (
     <div className="main-box">
@@ -45,16 +53,20 @@ const Home = () => {
         >
           <ArtDisplay data={artPiece} />
         </button>
-        <button
-          className="action-button"
-          onClick={refreshContent}
-          title="Placeholder text for box 3 that will be a description for the user to describe the action of the button"
-        >
-          Refresh
-        </button>
+        <div>
+          <input
+            type="text"
+            value={userInput}
+            onChange={handleInputChange}
+            placeholder="Enter a year..."
+          />
+          <button className="action-button" onClick={handleUserInput}>
+            Submit
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Home
+export default Home;
