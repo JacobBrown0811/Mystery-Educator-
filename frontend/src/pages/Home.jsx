@@ -34,16 +34,7 @@ const Home = () => {
 
   const handleUserInput = () => {
     setYear(userInput);
-    axios
-      .get(`met/random/${year}`)
-      .then((response) => setArtPiece(response.data))
-      .catch((error) => console.error("Error fetching art piece", error));
-
-    // fetch history Event
-    axios
-      .get(`history/random/${year}`)
-      .then((response) => setHistoryEvent(response.data))
-      .catch((error) => console.error("Error fetching fact", error));
+    refreshContent();
   };
 
   return (
