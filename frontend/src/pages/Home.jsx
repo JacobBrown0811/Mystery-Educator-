@@ -28,20 +28,33 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="Home">
-      <header>
-        <h1>History and Art Explorer</h1>
-        <p>Discover historical events and art from the same year.</p>
-      </header>
-      <div className="content">
-        <HistoryEvent data={historyEvent} />
-        <ArtDisplay data={artPiece} />
+    <div className="main-box">
+      <img src="/media/pictures/ChildrenIGuess.png" alt="Placeholder" />
+      <div className="action-buttons">
+        <button
+          className="action-button"
+          onClick={() => console.log("Button 1 clicked")}
+          title="Placeholder text for box 1 that will be a description for the user to describe the action of the button"
+        >
+          <HistoryEvent data={historyEvent} />
+        </button>
+        <button
+          className="action-button"
+          onClick={() => console.log("Button 2 clicked")}
+          title="Placeholder text for box 2 that will be a description for the user to describe the action of the button"
+        >
+          <ArtDisplay data={artPiece} />
+        </button>
+        <button
+          className="action-button"
+          onClick={refreshContent}
+          title="Placeholder text for box 3 that will be a description for the user to describe the action of the button"
+        >
+          Refresh
+        </button>
       </div>
-      <div className="refresh-button">
-        <button onClick={refreshContent}>Refresh</button>
-      </div>
-    </section>
+    </div>
   );
 };
 
-export default Home;
+export default Home
