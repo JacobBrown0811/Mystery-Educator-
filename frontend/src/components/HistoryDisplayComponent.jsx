@@ -1,6 +1,6 @@
 function HistoryEvent({ data }) {
   if (!data) {
-    return <p>Loading art...</p>;
+    return <p>Loading fact...</p>;
   }
 
   return (
