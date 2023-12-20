@@ -8,7 +8,7 @@ function HistoryEvent({ data }) {
       <h2>
         Year: {data.year} Month: {data.month} Day: {data.day}
       </h2>
-      <p>{data.fact}</p>
+      <p>{data.event}</p>
     </div>
   );
 }
