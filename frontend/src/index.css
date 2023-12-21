@@ -65,6 +65,7 @@ p {
   flex-direction: column;
   padding: 20px;
   background: linear-gradient(180deg, #2a7daf, #304067);
+  background-image: url(../public/media/pictures/background.jpeg);
   text-align: center;
   border: 1rem inset #21628a;
 }
@@ -84,9 +85,8 @@ p {
   justify-content: space-around;
   align-items: stretch;
   margin-top: 0px;
-  background-image: linear-gradient(180deg, #2a7daf, #050507);
+
   border: 1rem inset #21628a;
-  background-image:url(../public/media/pictures/ChildrenIGuess.png) ;
 }
 
 .item-box {
@@ -98,7 +98,7 @@ p {
   flex-grow: 1;
   width: 33%;
   border-radius: 5px;
-  background: linear-gradient(90deg, #2a7daf, #304067);
+  background: linear-gradient(180deg, #2a7daf, #304067);
   transition: background-color 0.3s;
 }
 
@@ -112,13 +112,10 @@ p {
   width: 33%;
   height: 50%;
   border-radius: 5px;
-  background: linear-gradient(90deg, #2a7daf, #304067);
+  background: linear-gradient(180deg, #2a7daf, #304067);
   transition: background-color 0.3s;
 }
 
-.item-box {
-  background: transparent 40%;
-}
 
 .action-button:hover {
   background-color: #e9e2a0;
@@ -277,6 +274,8 @@ p {
   /* Initial transform for stab animation */
   animation: fadeInAndTilt 1s forwards;
   /* Apply fade-in and tilt animation */
+background-image: url(../public/media/pictures/red-thumbtack.png);
+background-size:cover ;
 }
 
 /* Add this class when the note is active */
