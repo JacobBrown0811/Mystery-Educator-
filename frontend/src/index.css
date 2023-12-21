@@ -230,14 +230,18 @@ button {
 
 /* Apply the animations to the button */
 .pin-delete-button {
+ color: transparent;
   margin: 0;
-  background-color: #FFFFE0;
+  background-color: transparent;
   border-radius: 20%;
-  border-width: 1px;
+  border-width: 0px;
+  position: fixed;
   align-self: flex-end;
   opacity: 0; /* Initially hide the button */
   transform: rotate(45deg) translateY(-10px); /* Initial transform for stab animation */
   animation: fadeInAndTilt 1s forwards; /* Apply fade-in and tilt animation */
+  background-image: url(../public/media/pictures/green-thumbtack.png);
+  background-size: cover;
 }
 
 /* Add this class when the note is active */
