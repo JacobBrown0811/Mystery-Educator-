@@ -31,7 +31,7 @@ function About() {
           <p className="names">Nathan Mange</p>
           <a href="https://github.com/nmange95" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
           <p>Back-End Development</p>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti odio tempora iusto eveniet, unde quia enim nulla molestiae reprehenderit vel dignissimos molestias perferendis voluptates tenetur rem nesciunt corrupti animi recusandae? Fugiat hic praesentium deleniti eligendi? Facere pariatur atque in dignissimos.</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </div>
         <div className="group-box">
             <img src="https://avatars.githubusercontent.com/u/146746326?v=4" alt="Wendy's pfp" className="team-image"/>
