@@ -123,15 +123,6 @@ p {
   margin-top: 20px;
 }
 
-.art-display-contents {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.history {}
-
-
 .pinboard {
   display: flex;
   flex-wrap: wrap;

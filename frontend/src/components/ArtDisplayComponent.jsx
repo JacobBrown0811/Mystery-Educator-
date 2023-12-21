@@ -18,8 +18,7 @@ function ArtDisplay({ data }) {
             <h2 className="art-display-title">{data.title}</h2>
             <div className="art-display-contents">
                 <button onClick={openArtwork} className="view-artwork-button">View Artwork</button>
-                <p>By: {data.artist}</p>
-                <p>Year: {data.year}</p>
+                {data.artist && <p>By: {data.artist}</p>}
                 {data.classification && <p>Classification: {data.classification}</p>}
             </div>
         </div>
