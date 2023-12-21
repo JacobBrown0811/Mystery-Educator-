@@ -55,12 +55,18 @@ public class MetService {
                 HttpResponse<String> objectResponse = client.send(objectRequest, HttpResponse.BodyHandlers.ofString());
                 Map<String, Object> responseMap = objectMapper.readValue(objectResponse.body(), Map.class);
 
-                String artist = (String) responseMap.get("artistDisplayName");
-                String objectUrl = (String) responseMap.get("objectURL");
-                String classification = (String) responseMap.get("classification");
-                String objectYear = Integer.toString((int) responseMap.get("objectBeginDate"));
-                String objectTitle = (String) responseMap.get("title");
+                if (responseMap.containsKey("objectBeginDate") && responseMap.get("objectBeginDate") != null) {
 
-                return new ArtItem((long) randomID, artist, objectYear, objectUrl, classification, objectTitle);
+                        String artist = (String) responseMap.get("artistDisplayName");
+                        String objectUrl = (String) responseMap.get("objectURL");
+                        String classification = (String) responseMap.get("classification");
+                        String objectYear = Integer.toString((int) responseMap.get("objectBeginDate"));
+                        String objectTitle = (String) responseMap.get("title");
+
+                        return new ArtItem((long) randomID, artist, objectYear, objectUrl, classification, objectTitle);
+                }
+
+                return new ArtItem(0L, "", "", "", "", "");
+
         }
 }
