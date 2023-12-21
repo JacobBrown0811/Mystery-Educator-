@@ -99,7 +99,7 @@ const Home = () => {
         </div>
 
         {/* Year Input Box */}
-        <div className="item-box">
+        <div className="search-box">
           <label htmlFor="yearInput">Enter a Year:</label>
           <input
             id="yearInput"
