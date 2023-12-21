@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.wecancodeit.backend.ArtItem;
 import org.wecancodeit.backend.service.MetService;
 
 import jakarta.annotation.Resource;
@@ -29,6 +30,11 @@ public class MetController {
      */
     @GetMapping("/random/{year}")
     public ResponseEntity<?> getRandomObject(@PathVariable String year) throws IOException, InterruptedException {
+        ArtItem item = service.getItemByYear(year);
+        // single retry for empty item response
+        if (item.getId() == 0) {
+            item = service.getItemByYear(year);
+        }
         return ResponseEntity.ok(service.getItemByYear(year));
     }
 }
