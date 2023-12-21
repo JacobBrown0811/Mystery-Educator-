@@ -95,14 +95,27 @@ button {
   background-color: #e9e2a0;
 }
 
-.pinboard {
+
+.pinboard{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
   margin-bottom: 5px;
   min-height: 18em;
-  background-image: url(../public/media/pictures/cork-background.jpg)
+  background-image: url(../public/media/pictures/cork-background.jpg);
+  
+}
+/* Sticky note animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .pin {
@@ -115,6 +128,7 @@ button {
   margin-right: 0.5em;
   padding: 0.5em;
   background-color: #FFFFE0;
+  animation: fadeIn 1s;
 }
 
 .pin-content {
