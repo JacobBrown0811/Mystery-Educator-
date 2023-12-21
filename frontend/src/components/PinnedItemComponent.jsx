@@ -8,7 +8,7 @@ const PinnedItem = ({ item, removePinFunc }) => {
     return (
         <div className="pin">
             <button className="pin-delete-button" onClick={() => removePinFunc(item.id)}>x</button>
-            <p className="pin-title">{item.title}</p>
+            <h2 className="pin-title">{item.title}</h2>
             <p className="pin-content">{item.content}</p>
             {item.link && <button onClick={openLink} className="pin-link-button">View Art</button>}
         </div>
