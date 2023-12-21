@@ -101,6 +101,7 @@ button {
   align-items: center;
   justify-content: space-around;
   margin-bottom: 5px;
+  min-height: 18em;
   background-image: url(../public/media/pictures/cork-background.jpg)
 }
 

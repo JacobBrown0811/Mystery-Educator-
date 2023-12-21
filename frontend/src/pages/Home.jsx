@@ -11,13 +11,12 @@ const Home = () => {
   const [userInput, setUserInput] = useState(defaultYear.toString());
   const [pinnedItems, setPinnedItems] = useState(() => {
     // Load saved items from localStorage if available
-    const saved = localStorage.getItem('pinnedItems');
+    const saved = localStorage.getItem("pinnedItems");
     return saved ? JSON.parse(saved) : [];
   });
 
   // Function to fetch new event and art piece
   const refreshContent = (year) => {
-
     // fetch artPiece
     axios
       .get(`met/random/${year}`)
@@ -36,8 +35,8 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('pinnedItems', JSON.stringify(pinnedItems));
-  })
+    localStorage.setItem("pinnedItems", JSON.stringify(pinnedItems));
+  });
 
   const handleInputChange = (event) => {
     setUserInput(event.target.value);
@@ -48,43 +47,56 @@ const Home = () => {
   };
 
   const pinHistory = (event) => {
-    let id = event.event
-    if (!pinnedItems.some(item => item.id === id)) {
-      setPinnedItems(prevItems => [...prevItems, {
-        id: id,
-        title: `${event.year} event`,
-        content: event.event
-      }]);
+    let id = event.event;
+    if (!pinnedItems.some((item) => item.id === id)) {
+      setPinnedItems((prevItems) => [
+        ...prevItems,
+        {
+          id: id,
+          title: `${event.year} event`,
+          content: event.event,
+        },
+      ]);
     }
   };
 
   const pinArt = (art) => {
-    if (!pinnedItems.some(item => item.id === art.id)) {
-      setPinnedItems(prevItems => [...prevItems, {
-        id: art.id,
-        title: `${art.year} art piece`,
-        content: art.title,
-        link: art.url
-      }]);
+    if (!pinnedItems.some((item) => item.id === art.id)) {
+      setPinnedItems((prevItems) => [
+        ...prevItems,
+        {
+          id: art.id,
+          title: `${art.year} art piece`,
+          content: art.title,
+          link: art.url,
+        },
+      ]);
     }
   };
 
   const removePin = (idToRemove) => {
-    setPinnedItems(prevItems => prevItems.filter(item => item.id !== idToRemove));
+    setPinnedItems((prevItems) =>
+      prevItems.filter((item) => item.id !== idToRemove)
+    );
   };
-
 
   return (
     <div className="main-box">
-      <Pinboard items={pinnedItems} removePinFunc={removePin} />
-      {/* <img src="/media/pictures/ChildrenIGuess.png" alt="Placeholder" /> */}
+  
+
+      {/* History Event Box */}
       <div id="items-container">
         <div className="item-box">
           <HistoryEvent data={historyEvent} />
-          <button className="action-button" onClick={() => pinHistory(historyEvent)}>
+          <button
+            className="action-button"
+            onClick={() => pinHistory(historyEvent)}
+          >
             Pin History Event
           </button>
         </div>
+
+        {/* Year Input Box */}
         <div className="item-box">
           <label htmlFor="yearInput">Enter a Year:</label>
           <input
@@ -98,6 +110,8 @@ const Home = () => {
             Submit
           </button>
         </div>
+
+        {/* Art Box */}
         <div className="item-box">
           <ArtDisplay data={artPiece} />
           <button className="action-button" onClick={() => pinArt(artPiece)}>
@@ -105,6 +119,9 @@ const Home = () => {
           </button>
         </div>
       </div>
+          {/* Cork Board */}
+          <Pinboard items={pinnedItems} removePinFunc={removePin} />
+      {/* <img src="/media/pictures/ChildrenIGuess.png" alt="Placeholder" /> */}
     </div>
   );
 };
