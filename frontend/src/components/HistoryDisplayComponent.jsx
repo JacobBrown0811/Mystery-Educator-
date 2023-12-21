@@ -48,7 +48,7 @@ function HistoryEvent({ data }) {
   return (
     <div className="history">
       <h2>
-        {FormatMonth(month)}/{day}/{year}
+        {FormatMonth(month)} {day}, {year}
       </h2>
       <p>{event}</p>
     </div>
