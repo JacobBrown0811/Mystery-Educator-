@@ -2,14 +2,22 @@ import ArtDisplay from "../components/ArtDisplayComponent";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import HistoryEvent from "../components/HistoryDisplayComponent";
+import Pinboard from "../components/PinboardComponent";
 
 const Home = () => {
+  const defaultYear = new Date().getFullYear() - 100;
   const [historyEvent, setHistoryEvent] = useState(null);
   const [artPiece, setArtPiece] = useState(null);
-  const [userInput, setUserInput] = useState("");
+  const [userInput, setUserInput] = useState(defaultYear.toString());
+  const [pinnedItems, setPinnedItems] = useState(() => {
+    // Load saved items from localStorage if available
+    const saved = localStorage.getItem('pinnedItems');
+    return saved ? JSON.parse(saved) : [];
+  });
 
   // Function to fetch new event and art piece
   const refreshContent = (year) => {
+
     // fetch artPiece
     axios
       .get(`met/random/${year}`)
@@ -27,6 +35,10 @@ const Home = () => {
     refreshContent(new Date().getFullYear() - 100); // Initial fetch on component mount
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('pinnedItems', JSON.stringify(pinnedItems));
+  })
+
   const handleInputChange = (event) => {
     setUserInput(event.target.value);
   };
@@ -35,26 +47,48 @@ const Home = () => {
     refreshContent(userInput);
   };
 
+  const pinHistory = (event) => {
+    let id = event.event
+    if (!pinnedItems.some(item => item.id === id)) {
+      setPinnedItems(prevItems => [...prevItems, {
+        id: id,
+        title: `${event.year} event`,
+        content: event.event
+      }]);
+    }
+  };
+
+  const pinArt = (art) => {
+    if (!pinnedItems.some(item => item.id === art.id)) {
+      setPinnedItems(prevItems => [...prevItems, {
+        id: art.id,
+        title: `${art.year} art piece`,
+        content: art.title,
+        link: art.url
+      }]);
+    }
+  };
+
+  const removePin = (idToRemove) => {
+    setPinnedItems(prevItems => prevItems.filter(item => item.id !== idToRemove));
+  };
+
+
   return (
     <div className="main-box">
-      <img src="/media/pictures/ChildrenIGuess.png" alt="Placeholder" />
-      <div className="action-buttons">
-        <button
-          className="action-button"
-          onClick={() => console.log("Button 1 clicked")}
-          title="Placeholder text for box 1 that will be a description for the user to describe the action of the button"
-        >
+      <Pinboard items={pinnedItems} removePinFunc={removePin} />
+      {/* <img src="/media/pictures/ChildrenIGuess.png" alt="Placeholder" /> */}
+      <div id="items-container">
+        <div className="item-box">
           <HistoryEvent data={historyEvent} />
-        </button>
-        <button
-          className="action-button"
-          onClick={() => console.log("Button 2 clicked")}
-          title="Placeholder text for box 2 that will be a description for the user to describe the action of the button"
-        >
-          <ArtDisplay data={artPiece} />
-        </button>
-        <div>
+          <button className="action-button" onClick={() => pinHistory(historyEvent)}>
+            Pin History Event
+          </button>
+        </div>
+        <div className="item-box">
+          <label htmlFor="yearInput">Enter a Year:</label>
           <input
+            id="yearInput"
             type="text"
             value={userInput}
             onChange={handleInputChange}
@@ -62,6 +96,12 @@ const Home = () => {
           />
           <button className="action-button" onClick={handleUserInput}>
             Submit
+          </button>
+        </div>
+        <div className="item-box">
+          <ArtDisplay data={artPiece} />
+          <button className="action-button" onClick={() => pinArt(artPiece)}>
+            Pin Art Piece
           </button>
         </div>
       </div>
