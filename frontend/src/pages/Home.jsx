@@ -30,10 +30,12 @@ const Home = () => {
       .catch((error) => console.error("Error fetching fact", error));
   };
 
+  // Initial fetch on component mount
   useEffect(() => {
-    refreshContent(new Date().getFullYear() - 100); // Initial fetch on component mount
+    refreshContent(defaultYear); // Initial fetch on component mount
   }, []);
 
+  // fetch pins from local storage
   useEffect(() => {
     localStorage.setItem("pinnedItems", JSON.stringify(pinnedItems));
   });
