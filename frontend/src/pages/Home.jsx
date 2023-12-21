@@ -84,7 +84,6 @@ const Home = () => {
 
   return (
     <div className="main-box">
-  
 
       {/* History Event Box */}
       <div id="items-container">

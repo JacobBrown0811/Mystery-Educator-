@@ -19,6 +19,10 @@ button {
   cursor: pointer;
 }
 
+h2 {
+  margin-top: 0.25rem;
+}
+
 p {
   margin: 0.25em;
 }
@@ -121,10 +125,6 @@ p {
   background-color: #e9e2a0;
 }
 
-.art-display-title {
-  margin-top: 20px;
-}
-
 .pinboard {
   display: flex;
   flex-wrap: wrap;
@@ -174,12 +174,12 @@ p {
 }
 
 /* Custom styles to hide scroll bars */
-.pin::-webkit-scrollbar {
+.pin-content::-webkit-scrollbar {
   width: 0.5em;
   /* Adjust as needed */
 }
 
-.pin::-webkit-scrollbar-thumb {
+.pin-content::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
 
@@ -220,6 +220,7 @@ p {
   font-size: 1em;
   font-family: 'Reenie Beanie';
   font-weight: normal;
+  overflow: auto;
 
   /* Prevent text from wrapping */
 
@@ -261,7 +262,7 @@ p {
 
 /* Apply the animations to the button */
 .pin-delete-button {
- color: transparent;
+  color: transparent;
   margin: 0;
   background-color: transparent;
   border-radius: 20%;
