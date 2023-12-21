@@ -10,7 +10,7 @@ const PinnedItem = ({ item, removePinFunc }) => {
             <button className="pin-delete-button" onClick={() => removePinFunc(item.id)}>x</button>
             <h2 className="pin-title">{item.title}</h2>
             <p className="pin-content">{item.content}</p>
-            {item.link && <button onClick={openLink} className="pin-link-button">View Art</button>}
+            {item.link && <button onClick={openLink} className="pin-link-button">Visit Art</button>}
         </div>
     );
 }

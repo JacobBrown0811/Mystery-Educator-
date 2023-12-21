@@ -68,7 +68,7 @@ const Home = () => {
         ...prevItems,
         {
           id: art.id,
-          title: `${art.year} art piece`,
+          title: `${art.year} art`,
           content: art.title,
           link: art.url,
         },
