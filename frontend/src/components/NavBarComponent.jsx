@@ -11,7 +11,7 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-      <div className="nav-title">History Explorer</div>
+      <div className="nav-title">History Pinboard</div>
 
       <div className="nav-links">
         <button onClick={() => handleButtonClick("home")}>
