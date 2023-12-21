@@ -15,6 +15,10 @@ nav {
   border-bottom: 2rem double #050507;
 }
 
+button {
+  cursor: pointer;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -26,9 +30,12 @@ nav {
 }
 
 .nav-links a {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit color from parent element */
-  cursor: pointer; /* Change cursor style */
+  text-decoration: none;
+  /* Remove underline */
+  color: inherit;
+  /* Inherit color from parent element */
+  cursor: pointer;
+  /* Change cursor style */
 }
 
 .nav-links button {
@@ -44,10 +51,12 @@ nav {
 }
 
 .main-box {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
-  background: linear-gradient(90deg,#2a7daf, #304067);
+  background: linear-gradient(90deg, #2a7daf, #304067);
   text-align: center;
-  border:1rem inset #21628a;
+  border: 1rem inset #21628a;
 }
 
 .main-box img {
@@ -56,23 +65,65 @@ nav {
   border-radius: 8px;
 }
 
-.action-buttons {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 0px;
-  background-image: linear-gradient(90deg,#2a7daf, #050507);
-  border:1rem inset #21628a;
+#yearInput {
+  text-align: center;
 }
 
-.action-button {
+#items-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-top: 0px;
+  background-image: linear-gradient(90deg, #2a7daf, #050507);
+  border: 1rem inset #21628a;
+}
+
+.item-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 10px 20px;
-  border: none;
+  flex-grow: 1;
+  width: 33%;
   border-radius: 5px;
-  cursor: pointer;
-  background: linear-gradient(90deg,#2a7daf, #304067);
+  background: linear-gradient(90deg, #2a7daf, #304067);
   transition: background-color 0.3s;
 }
 
 .action-button:hover {
   background-color: #e9e2a0;
+}
+
+.pinboard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 5px;
+  background-image: url(../public/media/pictures/cork-background.jpg)
+}
+
+.pin {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  background-color: #FFFFE0;
+}
+
+.pin-content {
+  font-size: 0.7em;
+}
+
+.pin-delete-button {
+  margin: 0;
+  background-color: #FFFFE0;
+  border-radius: 20%;
+  border-width: 1px;
+  align-self: flex-end;
 }
