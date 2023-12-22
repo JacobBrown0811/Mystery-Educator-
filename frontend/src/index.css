@@ -94,6 +94,9 @@ p {
 }
 
 .item-box {
+  font-weight: bold;
+  color: black;
+  text-shadow: #050507;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,6 +110,8 @@ p {
 }
 
 .search-box {
+  border: .1em solid #304067;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
