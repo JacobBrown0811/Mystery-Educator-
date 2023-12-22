@@ -1,28 +1,32 @@
 .About {
    display: flex;
    flex-direction: column;
+   background-color: #2a7daf;
    align-items: center;
-   background-image: url('pages/Images/background.jpeg');
+   background-image: linear-gradient(#2a7daf, #050507);
+   background-size: cover;
    padding: 50px;
-
 }
 
 .About-header {
-   font-size: 80px;
-   color: #fcfffa;
+   font-size: 90px;
+   color: #000000;
    background-image: url('pages/Images/star.png');
    background-repeat: no-repeat;
-   background-position: -1cqmax;
-   background-size: 7cqmin;
+   background-position: 18cqmax;
+   background-size: 5cqmin;
    padding-left: 1cm;
 
+}
+
+nav {
+   background-color: #2a7daf;
 }
 
 .group-container {
    display: flex;
    padding: 10px;
    flex-wrap: wrap;
-   
 }
 
 .group-box {
@@ -38,7 +42,8 @@
 
 .names {
    font-family: monospace;
-   font-size: 24px;
+   font-weight: bold;
+   font-size: 30px;
    margin-bottom: 10px;
 }
 
