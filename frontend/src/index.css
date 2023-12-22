@@ -50,6 +50,8 @@ p {
   /* Inherit color from parent element */
   cursor: pointer;
   /* Change cursor style */
+  margin: 0 15px;
+  font-size: 1em;
 }
 
 .nav-links button {
@@ -89,7 +91,9 @@ p {
   justify-content: space-around;
   align-items: stretch;
   margin-top: 0px;
-
+  background-size:contain ;
+  background-color: #304067;
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
   border: 1rem inset #21628a;
 }
 
@@ -104,11 +108,22 @@ p {
   padding: 10px 20px;
   flex-grow: 1;
   width: 33%;
+  border:1px solid #050507;
   border-radius: 5px;
-  background: linear-gradient(180deg, #2a7daf, #304067);
+  background-color: #ffc;
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
   transition: background-color 0.3s;
+
 }
 
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
 .search-box {
   border: .1em solid #304067;
   margin: auto;
@@ -123,11 +138,24 @@ p {
   border-radius: 5px;
   background: linear-gradient(180deg, #2a7daf, #304067);
   transition: background-color 0.3s;
+  animation: pulse 1s infinite;
+}
+.action-button{
+  background-color: #304067;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease-in-out;
 }
 
-
 .action-button:hover {
-  background-color: #e9e2a0;
+  background: linear-gradient(45deg, #ff4e00, #ff9d00);
+  box-shadow: 0 8px 16px rgba(66, 133, 244, 0.3);
 }
 
 .pinboard {
