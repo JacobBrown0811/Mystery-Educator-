@@ -91,9 +91,9 @@ p {
   justify-content: space-around;
   align-items: stretch;
   margin-top: 0px;
-  background-size:contain ;
+  background-size: contain;
   background-color: #304067;
-  box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
   border: 1rem inset #21628a;
 }
 
@@ -103,21 +103,22 @@ p {
   text-shadow: #050507;
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   flex-grow: 1;
   width: 33%;
-  border:1px solid #050507;
+  border: 1px solid #050507;
   border-radius: 5px;
   background-color: #ffc;
-  box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
   transition: background-color 0.3s;
-
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -125,7 +126,7 @@ p {
   }
 }
 .search-box {
-  border: .1em solid #304067;
+  border: 0.1em solid #304067;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -140,9 +141,13 @@ p {
   transition: background-color 0.3s;
   animation: pulse 2s infinite;
   animation-iteration-count: 7;
-  box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
 }
-.action-button{
+
+.art-display-content{
+  align-items: center;
+}
+.action-button {
   background-color: #304067;
   color: #fff;
   padding: 10px 20px;
@@ -160,6 +165,21 @@ p {
   box-shadow: 0 8px 16px rgba(66, 133, 244, 0.3);
 }
 
+.view-artwork-button {
+  background-color: #304067;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+  transition: background-color 0.3s ease-in-out;
+}
+.view-artwork-button:hover {
+  background: linear-gradient(45deg, #ff4e00, #ff9d00);
+  box-shadow: 0 8px 16px rgba(66, 133, 244, 0.3);
+}
 
 .pinboard {
   display: flex;
@@ -169,15 +189,10 @@ p {
   margin-bottom: 5px;
   min-height: 18em;
   background-image: url(../public/media/pictures/cork-background.jpg);
-  box-shadow:
-  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-  0 12.5px 10px rgba(0, 0, 0, 0.06),
-  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  0 100px 80px rgba(0, 0, 0, 0.12)
-;
-
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
 /* Sticky note animation */
@@ -195,7 +210,7 @@ p {
 
 .pin {
   text-decoration: none;
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: bold;
   font-size: 1rem;
   display: flex;
@@ -207,11 +222,11 @@ p {
   margin-bottom: 1em;
   margin-left: 0.5em;
   margin-right: 0.5em;
-  padding: .5em;
+  padding: 0.5em;
   background-color: #ffc;
-  box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
   animation: fadeInAndTilt 1s;
-  transition: transform .15s linear;
+  transition: transform 0.15s linear;
   transform: rotate(-6deg);
   position: relative;
   overflow: auto;
@@ -249,11 +264,10 @@ p {
 
 .pin:hover,
 .pin:focus {
-  box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
   transform: scale(1.25);
   position: relative;
   z-index: 5;
-
 }
 
 .pin-title {
@@ -262,12 +276,11 @@ p {
 
 .pin-content {
   font-size: 1em;
-  font-family: 'Reenie Beanie';
+  font-family: "Reenie Beanie";
   font-weight: normal;
   overflow: auto;
 
   /* Prevent text from wrapping */
-
 }
 
 @keyframes fadeInAndTilt {
@@ -304,7 +317,11 @@ p {
   }
 }
 @keyframes bounceOnHover {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
   40% {
@@ -327,11 +344,10 @@ p {
   /* Initially hide the button */
   transform: rotate(45deg) translateY(-10px);
   /* Initial transform for stab animation */
-  animation: fadeInAndTilt 1s forwards,  bounceOnHover 0.5s;
+  animation: fadeInAndTilt 1s forwards, bounceOnHover 0.5s;
   /* Apply fade-in and tilt animation */
-background-image: url(../public/media/pictures/red-thumbtack.png);
-background-size:cover ;
-
+  background-image: url(../public/media/pictures/red-thumbtack.png);
+  background-size: cover;
 }
 
 /* Add this class when the note is active */
