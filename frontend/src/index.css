@@ -138,7 +138,9 @@ p {
   border-radius: 5px;
   background: linear-gradient(180deg, #2a7daf, #304067);
   transition: background-color 0.3s;
-  animation: pulse 1s infinite;
+  animation: pulse 2s infinite;
+  animation-iteration-count: 7;
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
 }
 .action-button{
   background-color: #304067;
@@ -157,6 +159,7 @@ p {
   background: linear-gradient(45deg, #ff4e00, #ff9d00);
   box-shadow: 0 8px 16px rgba(66, 133, 244, 0.3);
 }
+
 
 .pinboard {
   display: flex;
