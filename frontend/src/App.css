@@ -12,11 +12,10 @@
    font-size: 90px;
    color: #000000;
    background-repeat: no-repeat;
-   background-position: 18cqmax;
-   background-size: 5cqmin;
+   background-position: 55% 50%;
+   background-size: 6cqmin;
    padding-left: 1cm;
-   background-image: src="./media/pictures/star.png";
-
+   background-image: url("../public/media/pictures/star.png");
 }
 
 nav {
@@ -56,12 +55,12 @@ nav {
 .button {
    width: 80px;
    height: 45px;
-   }
+}
 
 .button:hover {
    box-shadow: #2a7daf;
-  opacity: 0.6;
- }
+   opacity: 0.6;
+}
 
 
 
