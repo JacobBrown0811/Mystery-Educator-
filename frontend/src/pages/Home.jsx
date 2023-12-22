@@ -55,7 +55,7 @@ const Home = () => {
         ...prevItems,
         {
           id: id,
-          title: `${event.year} event`,
+          title: `${event.year} Event`,
           content: event.event,
         },
       ]);
@@ -68,7 +68,7 @@ const Home = () => {
         ...prevItems,
         {
           id: art.id,
-          title: `${art.year} ${art.classification ? art.classification.slice(0, -1) : 'art'}`,
+          title: `${art.year} ${art.classification ? art.classification.slice(0, -1) : 'Art'}`,
           content: art.title,
           link: art.url,
         },
