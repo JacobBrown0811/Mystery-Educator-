@@ -31,7 +31,7 @@ function FormatMonth(month) {
 
 function HistoryEvent({ data }) {
   if (!data || typeof data !== "object") {
-    return <p>Loading fact...</p>;
+    return <p>Something went wrong when retrieving a history event. Try again or try a different year.</p>;
   }
 
   const { month, day, year, event } = data;

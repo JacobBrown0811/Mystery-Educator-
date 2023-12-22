@@ -68,7 +68,7 @@ const Home = () => {
         ...prevItems,
         {
           id: art.id,
-          title: `${art.year} art`,
+          title: `${art.year} ${art.classification ? art.classification.slice(0, -1) : 'art'}`,
           content: art.title,
           link: art.url,
         },
@@ -92,6 +92,7 @@ const Home = () => {
           <button
             className="action-button"
             onClick={() => pinHistory(historyEvent)}
+            disabled={!historyEvent || typeof historyEvent !== "object"}
           >
             Pin History Event
           </button>
@@ -115,14 +116,13 @@ const Home = () => {
         {/* Art Box */}
         <div className="item-box">
           <ArtDisplay data={artPiece} />
-          <button className="action-button" onClick={() => pinArt(artPiece)}>
+          <button className="action-button" onClick={() => pinArt(artPiece)} disabled={!artPiece || artPiece.id === 0}>
             Pin Art Piece
           </button>
         </div>
       </div>
-          {/* Cork Board */}
-          <Pinboard items={pinnedItems} removePinFunc={removePin} />
-      {/* <img src="/media/pictures/ChildrenIGuess.png" alt="Placeholder" /> */}
+      {/* Cork Board */}
+      <Pinboard items={pinnedItems} removePinFunc={removePin} />
     </div>
   );
 };
